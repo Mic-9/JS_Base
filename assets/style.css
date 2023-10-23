@@ -12,6 +12,43 @@ body{
 
 
 
+main{
+    border: 1px solid red;
+    height: 100vh;
+    margin: 0 33px;
+    display: grid;
+}
+
+button{
+    border: 1px solid yellow ;
+    margin: 0 auto;
+    width: 100px;
+    height: 13%;
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+p{
+    border: 1px solid greenyellow;
+    margin: 0 auto;
+    width: 100px;
+    height: 50%;
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.segni{
+    border: 1px solid orchid ;
+    margin: 0 auto;
+    width: 100px;
+    height: 13%;
+}
+
+
 footer{
     background-color: rgb(30, 30, 30);
     width: 100%;
@@ -40,3 +77,5 @@ footer{
 .f-item img:hover{
     filter: brightness(150%);
 }
+
+
