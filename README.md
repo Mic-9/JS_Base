@@ -1,7 +1,7 @@
 
 # A simple Counter made in JavaScript
 
-This application allows you to decrease, increase or reset the value of the counter.
+This application allows you to decrease, increase or reset the value of the counter. [Try it here!](https://a-simple-counter-9.netlify.app/)
 
 
 
