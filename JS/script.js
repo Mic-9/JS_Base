@@ -1,46 +1,48 @@
 let corpo = document.querySelector('main');
+corpo.setAttribute('id', 'corpo')
 
-let restrat = document.createElement('button');
-restrat.innerHTML = '↻';
-corpo.appendChild(restrat);
+
+function addBtn (corpo, classe, id, innerHTML){
+    let btn = document.createElement('button');
+    btn.className = classe;
+    btn.id = id;
+    btn.innerHTML = innerHTML
+    corpo.appendChild(btn)
+}
+
+
+addBtn(document.getElementById('corpo'), '', 'res', '↻');
 
 let counter = document.createElement('p');
 counter.textContent = '0';
 corpo.appendChild(counter);
 
-let plus = document.createElement('button');
-plus.textContent = '+';
-plus.setAttribute('class', 'segni')
-corpo.appendChild(plus);
+addBtn(document.getElementById('corpo'), 'segni', 'plu', '+');
 
-let minus = document.createElement('button');
-minus.textContent = '-';
-minus.setAttribute('class', 'segni')
-corpo.appendChild(minus);
+addBtn(document.getElementById('corpo'), 'segni', 'min', '-');
 
-
+corpo.addEventListener('click', event=>{
+    if (event.target.id ==='plu'){
+        increase();
+    } if (event.target.id === 'min'){
+        decrease();
+    } if (event.target.id === 'res'){
+        toZero();
+    }
+})
 
 function increase(){
-    let num = (+counter.textContent);
+    let num = (counter.innerHTML);
     num++;
-    counter.textContent = num;
+    counter.innerHTML = num;
 };
-plus.addEventListener( 'click', ()=>{
-    increase();
-})
 
 function decrease(){
-    let num = (+counter.textContent);
+    let num = (counter.innerHTML);
     num--;
-    counter.textContent = num;
+    counter.innerHTML = num;
 };
-minus.addEventListener( 'click', ()=>{
-    decrease();
-})
 
 function toZero(){
-    counter.textContent = '0';
+    counter.innerHTML = '0';
 }
-restrat.addEventListener( 'click', ()=>{
-    toZero();
-})
