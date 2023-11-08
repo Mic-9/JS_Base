@@ -1,25 +1,25 @@
 let corpo = document.querySelector('main');
+corpo.setAttribute('id', 'corpo')
 
-let restrat = document.createElement('button');
-restrat.innerHTML = '↻';
-restrat.setAttribute('id', 'res')
-corpo.appendChild(restrat);
+
+function addElem(corpo, typeElem, classe, id, innerHTML){
+    let Elem = document.createElement(typeElem);
+    Elem.className = classe;
+    Elem.id = id;
+    Elem.innerHTML = innerHTML
+    corpo.appendChild(Elem)
+}
+
+
+addElem(document.getElementById('corpo'), 'button', '', 'res', '↻');
 
 let counter = document.createElement('p');
 counter.textContent = '0';
 corpo.appendChild(counter);
 
-let plus = document.createElement('button');
-plus.textContent = '+';
-plus.setAttribute('class', 'segni')
-plus.setAttribute('id', 'plu')
-corpo.appendChild(plus);
+addElem(document.getElementById('corpo'), 'button', 'segni', 'plu', '+');
 
-let minus = document.createElement('button');
-minus.textContent = '-';
-minus.setAttribute('class', 'segni')
-minus.setAttribute('id', 'min')
-corpo.appendChild(minus);
+addElem(document.getElementById('corpo'), 'button', 'segni', 'min', '-');
 
 corpo.addEventListener('click', event=>{
     if (event.target.id ==='plu'){
@@ -32,17 +32,17 @@ corpo.addEventListener('click', event=>{
 })
 
 function increase(){
-    let num = (+counter.textContent);
+    let num = (counter.innerHTML);
     num++;
-    counter.textContent = num;
+    counter.innerHTML = num;
 };
 
 function decrease(){
-    let num = (+counter.textContent);
+    let num = (counter.innerHTML);
     num--;
-    counter.textContent = num;
+    counter.innerHTML = num;
 };
 
 function toZero(){
-    counter.textContent = '0';
+    counter.innerHTML = '0';
 }
