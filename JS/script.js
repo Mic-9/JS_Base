@@ -2,24 +2,24 @@ let corpo = document.querySelector('main');
 corpo.setAttribute('id', 'corpo')
 
 
-function addElem(corpo, typeElem, classe, id, innerHTML){
-    let Elem = document.createElement(typeElem);
-    Elem.className = classe;
-    Elem.id = id;
-    Elem.innerHTML = innerHTML
-    corpo.appendChild(Elem)
+function addBtn (corpo, classe, id, innerHTML){
+    let btn = document.createElement('button');
+    btn.className = classe;
+    btn.id = id;
+    btn.innerHTML = innerHTML
+    corpo.appendChild(btn)
 }
 
 
-addElem(document.getElementById('corpo'), 'button', '', 'res', '↻');
+addBtn(document.getElementById('corpo'), '', 'res', '↻');
 
 let counter = document.createElement('p');
 counter.textContent = '0';
 corpo.appendChild(counter);
 
-addElem(document.getElementById('corpo'), 'button', 'segni', 'plu', '+');
+addBtn(document.getElementById('corpo'), 'segni', 'plu', '+');
 
-addElem(document.getElementById('corpo'), 'button', 'segni', 'min', '-');
+addBtn(document.getElementById('corpo'), 'segni', 'min', '-');
 
 corpo.addEventListener('click', event=>{
     if (event.target.id ==='plu'){
